@@ -1,7 +1,11 @@
 @import "./utilities/extends";
 @import "./utilities/variables";
+@import "./utilities/mixins";
+
 @import "./layout/header";
+@import "./layout/main";
 @import "./layout/footer";
+
 @import "./mq/mq";
 
 
