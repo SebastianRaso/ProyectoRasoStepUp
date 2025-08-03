@@ -1,0 +1,262 @@
+@import "./utilities/extends";
+@import "./utilities/variables";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./mq/mq";
+
+
+
+
+
+
+
+/*Estilos Generales*/
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    @extend %flex-column-center;
+    list-style: none;
+    gap: 1rem   ;
+}
+.oscurecer-fondo {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    background-color: $color-overlay;
+} 
+
+/*Estilos Header*/
+.logo-step{
+    width: $ancho-logo;
+    height: $alto-logo;
+    margin-left: 1rem;
+}
+
+.indexheader,.deportesheader{
+    background-image: url(../img/gente.corriendo.nike.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+
+    height: $altura-header;
+}
+
+
+
+.deportesheader{
+    background-image: url(../img/argentinos-por-el-mundo.jpg);
+}
+.contenedor-inferior-header
+    {
+  @extend %flex-column-center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 150px;
+  max-width: 70rem;
+  height: 50vh;
+}
+
+
+.index-header-flex {
+  @extend %flex-column-center;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.navegacionsuperior ul li a{
+    color: $color-blanco;
+    text-decoration: none;
+}
+
+.index-parrafo,.indexheader,.deportesheader{
+    color: rgb(255, 255, 255);
+}
+.buttonindex{
+    width: $ancho-boton;
+    background-color: $color-verde;
+    border: none;
+    color: $color-blanco;
+    font-weight: 700;
+    padding: $padding-boton;
+    cursor: pointer;
+}
+
+/*Estilos Main*/
+
+.novedades-titulo{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0.2rem;
+    grid-row-gap: 0.2rem;
+}
+
+
+.card-producto {
+  width: 25rem;
+  background-color: rgba(0, 0, 0, 0.301);
+  margin-right: 1rem;
+  margin-left: 1%;
+  @extend %card-rounded-bottom;
+
+  }
+  
+.card-producto:hover{
+    transform: scale(1.07);
+}
+.card-producto img{
+    width: 100%;
+}
+
+.card-producto-descuento span{
+    text-decoration: line-through;
+    color:$color-rojo;
+}
+
+.card-producto-descuento{
+    color: $color-azul;
+    font-weight: 600;
+}
+
+.card-producto-button{
+    width: 100%;
+    background-color: $color-verde;
+    color: $color-blanco;
+    font-weight: 600;
+    border: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left: 0.5rem;
+    border-right: 0.5rem;
+    cursor: pointer;
+
+}
+
+.card-precio {
+    font-weight: 600;
+}
+.novedades-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+}
+.card-producto h3,.card-producto{
+    margin-left: 1%;
+}
+.card-producto p,.card-producto{
+    margin-left: 1%;
+}
+
+.nuestras-promos {
+    color: $color-negro;
+    font-weight: 3000 ;
+    text-align: center;
+}
+
+.titulos-deportes{
+
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+
+
+}
+.carousel-foto{
+
+    width: 100%;
+    height: 40rem;
+
+    object-fit: cover ;
+}
+
+
+
+/*Estilos Footer*/
+.logotipofooter{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+footer{
+    background-color: $color-gris-footer;
+}
+
+.footer-derechos{
+    color: rgb(255, 255, 255);
+    font-weight: 600 ;
+    text-align: center;
+}
+.footer-container {
+  @extend %flex-center;
+  gap: 2rem;
+  height: 70%;
+}
+.container-grid  {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0.2rem;
+grid-row-gap: 0.2rem;
+}
+
+.container-hijoprimero { grid-area: 1 / 1 / 2 / 4; background-color: orangered; font-size: 600; text-align: center;color: #000000;}
+.container-hijosegundo { grid-area: 2 / 1 / 3 / 4; background-color: rgb(62, 62, 255); font-size: 600; text-align: center; color: #000000; }
+.container-hijotercero { grid-area: 3 / 1 / 4 / 4; background-color: red; font-size: 600; text-align: center; color: #000000;} 
+
+
+
+.hijoNovedades { grid-area: 1 / 1 / 2 / 3; background-color: $color-verde;font-size: 40px ;text-align: center; color: $color-blanco;}
+
+
+
+@media only screen and (min-width: 900px){
+        ul, .index-header-flex{
+        flex-direction: row;
+    }
+    .container-grid  {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0.2rem;
+grid-row-gap: 0.2rem;
+}
+
+.container-hijoprimero { grid-area: 1 / 1 / 2 / 4; background-color: orangered; font-size: 600; text-align: center;}
+.container-hijosegundo { grid-area: 2 / 1 / 3 / 4; background-color: rgb(48, 48, 250); font-size: 600; text-align: center; }
+.container-hijotercero { grid-area: 3 / 1 / 4 / 4; background-color: red; font-size: 600; text-align: center;} 
+
+.contenedor-inferior-header{
+    margin-left: 2rem;
+}
+.logotipo{
+    margin-left: 2rem;
+}
+
+.deportesheader{
+
+    flex-direction: row;
+}
+
+.novedades-titulo{
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 0.2rem;
+grid-row-gap: 0.2rem;
+}
+
+.hijoNovedades { grid-area: 1 / 1 / 2 / 3; background-color: green;font-size: 40px ;text-align: center; color: white;}
+
+
+} 

@@ -1,0 +1,21 @@
+/*Extends*/
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%card-rounded-bottom {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}

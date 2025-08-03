@@ -1,0 +1,76 @@
+/*Estilos Generales*/
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    @extend %flex-column-center;
+    list-style: none;
+    gap: 1rem   ;
+}
+.oscurecer-fondo {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    background-color: $color-overlay;
+} 
+
+/*Estilos Header*/
+.logo-step{
+    width: $ancho-logo;
+    height: $alto-logo;
+    margin-left: 1rem;
+}
+
+.indexheader,.deportesheader{
+    background-image: url(../img/gente.corriendo.nike.jpg);
+    background-size:cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+
+    height: $altura-header;
+}
+
+
+
+.deportesheader{
+    background-image: url(../img/argentinos-por-el-mundo.jpg);
+}
+.contenedor-inferior-header
+    {
+  @extend %flex-column-center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 150px;
+  max-width: 70rem;
+  height: 50vh;
+}
+
+
+.index-header-flex {
+  @extend %flex-column-center;
+  justify-content: space-between;
+  margin-right: 2rem;
+}
+
+.navegacionsuperior ul li a{
+    color: $color-blanco;
+    text-decoration: none;
+}
+
+.index-parrafo,.indexheader,.deportesheader{
+    color: rgb(255, 255, 255);
+}
+.buttonindex{
+    width: $ancho-boton;
+    background-color: $color-verde;
+    border: none;
+    color: $color-blanco;
+    font-weight: 700;
+    padding: $padding-boton;
+    cursor: pointer;
+}
